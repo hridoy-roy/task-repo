@@ -3,19 +3,27 @@
     <thead>
     <tr>
       <th class="text-left">SL</th>
-      <th class="text-left">Code</th>
       <th class="text-left">Name</th>
-      <th class="text-left">Purchase Rate</th>
-      <th class="text-left">Sale Rate</th>
+      <th class="text-left">Code</th>
+      <th class="text-left">Total Purchase</th>
+      <th class="text-left">Total Purchase Amount</th>
+      <th class="text-left">Total Sale</th>
+      <th class="text-left">Total Sale Amount</th>
+      <th class="text-left">Profit/Loss</th>
+      <th class="text-left">Stock</th>
     </tr>
     </thead>
     <tbody>
     <tr v-for="(item,key) in products" :key="item.name">
       <td>{{ ++key }}</td>
-      <td>{{ item.code }}</td>
       <td>{{ item.name }}</td>
-      <td>{{ item.purchase_rate }}</td>
-      <td>{{ item.sale_rate }}</td>
+      <td>{{ item.code }}</td>
+      <td>{{ item.totalPurchase }}</td>
+      <td>{{ item.totalSaleAmount }}</td>
+      <td>{{ item.totalSale }}</td>
+      <td>{{ item.totalSaleAmount }}</td>
+      <td>{{ item.profitLoss }}</td>
+      <td>{{ item.totalStock }}</td>
     </tr>
     </tbody>
   </v-table>
@@ -23,6 +31,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
   data() {
     return {
